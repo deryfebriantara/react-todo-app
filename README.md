@@ -1,16 +1,95 @@
-# React + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, full-featured todo list application built with React and Vite, featuring user authentication and CRUD operations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication with login system
+- Create, read, update, and delete todos
+- Mark todos as complete/incomplete
+- Edit todo items inline
+- Persistent authentication with JWT tokens
+- Clean and responsive UI
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** 19.1.1 - UI library
+- **Vite** 7.1.7 - Build tool and dev server
+- **ESLint** - Code linting
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js (v14 or higher)
+- npm or yarn
+- Backend API running on `http://localhost:5000`
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
+
+## Development
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173` (or another port if 5173 is busy).
+
+## Build
+
+Build for production:
+```bash
+npm run build
+```
+
+## Lint
+
+Run ESLint:
+```bash
+npm run lint
+```
+
+## Preview Production Build
+
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Login.jsx       # Login form component
+│   └── TodoList.jsx    # Todo list with CRUD operations
+├── services/
+│   └── api.js          # API service for backend communication
+├── App.jsx             # Main app component with auth state
+├── App.css             # App styles
+├── main.jsx            # App entry point
+└── index.css           # Global styles
+```
+
+## API Endpoints
+
+The app expects a backend API at `http://localhost:5000` with the following endpoints:
+
+- `POST /login` - User login (returns JWT token)
+- `GET /todos` - Get all todos (requires auth)
+- `POST /todos` - Create new todo (requires auth)
+- `PUT /todos/:id` - Update todo (requires auth)
+- `DELETE /todos/:id` - Delete todo (requires auth)
+
+## Authentication
+
+The app uses JWT token-based authentication stored in localStorage. The token is automatically included in API requests and cleared on logout or unauthorized responses.
+
+## License
+
+MIT
