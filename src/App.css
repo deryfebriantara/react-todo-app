@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Login Styles */
+.login-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-card {
+  background-color: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-card h1 {
+  margin: 0 0 2rem 0;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.error-message {
+  display: block;
+  margin-top: 0.5rem;
+  color: #ff4444;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 68, 68, 0.1);
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #535bf2;
+}
+
+button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.login-hint {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(100, 108, 255, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(100, 108, 255, 0.3);
+}
+
+.login-hint p {
+  margin: 0.25rem 0;
+  color: #aaa;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Todo List Styles */
+.todo-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.todo-header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.logout-btn {
+  width: auto;
+  padding: 0.5rem 1.5rem;
+  background-color: #dc2626;
+  font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+  background-color: #b91c1c;
+}
+
+.add-todo-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.875rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.add-btn {
+  width: auto;
+  padding: 0.875rem 2rem;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+  background-color: #333;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.todo-text {
+  flex: 1;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.edit-btn {
+  background-color: #0891b2;
+}
+
+.edit-btn:hover {
+  background-color: #0e7490;
+}
+
+.delete-btn {
+  background-color: #dc2626;
+}
+
+.delete-btn:hover {
+  background-color: #b91c1c;
+}
+
+.save-btn {
+  background-color: #16a34a;
+}
+
+.save-btn:hover {
+  background-color: #15803d;
+}
+
+.cancel-btn {
+  background-color: #6b7280;
+}
+
+.cancel-btn:hover {
+  background-color: #4b5563;
+}
+
+.edit-mode {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  align-items: center;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #646cff;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #535bf2;
+}
+
+.loading,
+.empty-message {
+  text-align: center;
+  color: #aaa;
+  padding: 2rem;
+  font-style: italic;
+}
